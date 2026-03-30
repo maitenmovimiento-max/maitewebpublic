@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maitenmovimiento – Fitness para Embarazadas</title>
+  <meta name="description" content="Entrenamiento personalizado y asesoría 1 a 1 para embarazadas y postparto."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- DECORATIVE SIDE LINE -->
+<div class="side-line"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-symbol">✿</span>
+      <span class="logo-text">maiten<strong>movimiento</strong></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#testimonios">Historias</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contacto" class="nav-cta">Reservar consulta</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Fitness · Embarazo · Postparto</span>
+    </div>
+    <h1 class="hero-headline">
+      Hagamos de tu<br/>
+      embarazo<br/>
+      <span class="highlight">un momento hermoso<span class="accent-line"></span></span>
+    </h1>
+    <p class="hero-sub">Entrenamiento personalizado y asesoría 1 a 1 para mujeres embarazadas. Cuida tu cuerpo, honra tu proceso, celebra tu fuerza.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Reserva tu consulta gratuita</a>
+      <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-n">+200</span>
+        <span class="stat-l">Mamás acompañadas</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">3</span>
+        <span class="stat-l">Trimestres adaptados</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">100%</span>
+        <span class="stat-l">Personalizado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image-wrap">
+    <div class="hero-img-frame">
+      <!-- FOTO REAL: cuando tengas la imagen, descomenta la línea de abajo y comenta/elimina el SVG -->
+      <!-- <img src="images/hero-maiten.jpg" alt="Maiten, entrenadora de fitness prenatal" class="hero-photo"> -->
+      <svg class="hero-figure-svg" viewBox="0 0 280 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="140" cy="155" rx="62" ry="75" fill="#D1C4E9" opacity="0.55"/>
+        <ellipse cx="140" cy="285" rx="85" ry="100" fill="#D1C4E9" opacity="0.45"/>
+        <ellipse cx="136" cy="272" rx="50" ry="60" fill="#7A1FA1" opacity="0.12"/>
+        <circle cx="140" cy="88" r="36" fill="#E0C06E" opacity="0.45"/>
+        <circle cx="140" cy="85" r="28" fill="#D1C4E9" opacity="0.85"/>
+        <path d="M65 370 Q42 325 78 292" stroke="#99CD85" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M78 292 Q60 275 50 260" stroke="#99CD85" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M78 292 Q92 268 98 250" stroke="#99CD85" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="50" cy="257" rx="8" ry="5" fill="#99CD85" opacity="0.7" transform="rotate(-30 50 257)"/>
+        <ellipse cx="100" cy="247" rx="8" ry="5" fill="#99CD85" opacity="0.7" transform="rotate(20 100 247)"/>
+        <path d="M215 370 Q238 325 202 292" stroke="#99CD85" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M202 292 Q220 275 230 260" stroke="#99CD85" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M202 292 Q188 268 182 250" stroke="#99CD85" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="230" cy="257" rx="8" ry="5" fill="#99CD85" opacity="0.7" transform="rotate(30 230 257)"/>
+        <ellipse cx="180" cy="247" rx="8" ry="5" fill="#99CD85" opacity="0.7" transform="rotate(-20 180 247)"/>
+      </svg>
+      <div class="hero-corner-deco">✿</div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">🌿</div>
+        <div class="hero-badge-text">
+          <strong>Certificada</strong>
+          <span>Fitness Prenatal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Descubrir</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="m-dot">✿</span> Entrenamiento seguro</div>
+    <div class="marquee-item"><span class="m-dot">✦</span> Asesoría personalizada</div>
+    <div class="marquee-item"><span class="m-dot">✿</span> Postparto consciente</div>
+    <div class="marquee-item"><span class="m-dot">✦</span> Bienestar integral</div>
+    <div class="marquee-item"><span class="m-dot">✿</span> Nutrición y movimiento</div>
+    <div class="marquee-item"><span class="m-dot">✦</span> Suelo pélvico</div>
+    <div class="marquee-item"><span class="m-dot">✿</span> Entrenamiento seguro</div>
+    <div class="marquee-item"><span class="m-dot">✦</span> Asesoría personalizada</div>
+    <div class="marquee-item"><span class="m-dot">✿</span> Postparto consciente</div>
+    <div class="marquee-item"><span class="m-dot">✦</span> Bienestar integral</div>
+    <div class="marquee-item"><span class="m-dot">✿</span> Nutrición y movimiento</div>
+    <div class="marquee-item"><span class="m-dot">✦</span> Suelo pélvico</div>
+  </div>
+</div>
+
+<!-- SOBRE MÍ -->
+<section class="section sobre-mi" id="sobre-mi">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-stack reveal reveal-left">
+        <div class="about-main-card">
+          <!-- FOTO REAL: descomenta y pon tu imagen cuando la tengas -->
+          <!-- <img src="images/about-maiten.jpg" alt="Maiten entrenadora prenatal" loading="lazy"> -->
+          <svg class="about-svg-figure" viewBox="0 0 260 320" fill="none">
+            <ellipse cx="130" cy="120" rx="55" ry="65" fill="#C0AEE0" opacity="0.5"/>
+            <circle cx="130" cy="65" r="34" fill="#E0C06E" opacity="0.45"/>
+            <circle cx="130" cy="62" r="26" fill="#D1C4E9" opacity="0.9"/>
+            <ellipse cx="130" cy="240" rx="78" ry="90" fill="#C0AEE0" opacity="0.4"/>
+            <path d="M55 315 Q35 280 62 252" stroke="#99CD85" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M205 315 Q225 280 198 252" stroke="#99CD85" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="about-float-card">
+          <div class="float-stat">+5</div>
+          <div class="float-label">años acompañando mamás</div>
+        </div>
+        <div class="about-accent"></div>
+      </div>
+
+      <div class="about-text reveal reveal-right">
+        <span class="section-tag">Sobre mí</span>
+        <h2>Hola, soy <em>Maiten</em></h2>
+        <p class="about-lead">Entrenadora especializada en fitness prenatal y postparto, apasionada por acompañar a las mujeres en uno de los momentos más transformadores de sus vidas.</p>
+        <p>Sé de primera mano lo que se siente cuando tu cuerpo cambia y no sabes cómo cuidarte. Por eso decidí especializarme: para que ninguna mamá tenga que atravesar sola ese camino.</p>
+        <p>Mi enfoque combina movimiento seguro, escucha activa y mucho respeto por los ritmos de cada cuerpo. No hay dos embarazos iguales, y eso me parece lo más hermoso de este trabajo.</p>
+        <div class="about-credentials stagger-children">
+          <div class="credential"><span class="cred-icon">✓</span>Certificada en Entrenamiento Prenatal y Postparto</div>
+          <div class="credential"><span class="cred-icon">✓</span>Especialista en movilidad y suelo pélvico</div>
+          <div class="credential"><span class="cred-icon">✓</span>Formación en nutrición para embarazo y lactancia</div>
+          <div class="credential"><span class="cred-icon">✓</span>Más de 5 años acompañando a mujeres</div>
+        </div>
+        <a href="#contacto" class="btn btn-primary">Quiero conocerla</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section servicios" id="servicios">
+  <div class="container">
+    <div class="section-header centered reveal reveal-up">
+      <span class="section-tag">Lo que ofrezco</span>
+      <h2>Servicios <em>pensados para ti</em></h2>
+      <p>Cada programa está diseñado para adaptarse a tu etapa, tu cuerpo y tus objetivos únicos.</p>
+    </div>
+    <div class="services-grid stagger-children">
+      <div class="service-card featured">
+        <div class="service-number">01</div>
+        <div class="service-badge">Más elegido</div>
+        <div class="service-icon">🤸‍♀️</div>
+        <h3>Entrenamiento Personalizado</h3>
+        <p>Sesiones de movimiento adaptadas a tu trimestre, condición física y bienestar emocional. Juntas construimos una rutina que te haga sentir fuerte y segura.</p>
+        <ul class="service-features">
+          <li>Plan 100% adaptado a tu trimestre</li>
+          <li>Sesiones 1 a 1 (online o presencial)</li>
+          <li>Seguimiento continuo y ajuste semanal</li>
+          <li>Ejercicios de suelo pélvico incluidos</li>
+          <li>Modificación ante síntomas y cambios</li>
+        </ul>
+        <a href="#contacto" class="btn btn-gold">Consultar disponibilidad</a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">💬</div>
+        <h3>Asesoría 1 a 1</h3>
+        <p>Sesiones de consultoría personalizada donde abordamos todo lo que necesitas: ejercicio, nutrición, bienestar mental y preparación para el postparto.</p>
+        <ul class="service-features">
+          <li>Consultoría online o presencial</li>
+          <li>Nutrición para embarazo y lactancia</li>
+          <li>Bienestar mental y gestión del estrés</li>
+          <li>Preparación integral para el parto</li>
+          <li>Plan personalizado de recuperación</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline">Agendar sesión</a>
+      </div>
+    </div>
+    <div class="services-note">✦ Primera consulta siempre gratuita · Modalidad online y presencial · Sin permanencia ✦</div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="section blog" id="blog">
+  <div class="container">
+    <div class="section-header centered reveal reveal-up">
+      <span class="section-tag">Tips &amp; Bienestar</span>
+      <h2>Del blog <em>para ti</em></h2>
+      <p>Recursos, guías y consejos honestos para acompañarte en cada etapa de tu proceso.</p>
+    </div>
+    <div class="blog-filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="ejercicio">Ejercicio</button>
+      <button class="filter-btn" data-filter="nutricion">Nutrición</button>
+      <button class="filter-btn" data-filter="postparto">Postparto</button>
+      <button class="filter-btn" data-filter="bienestar">Bienestar</button>
+    </div>
+    <div class="blog-grid stagger-children">
+      <article class="blog-card large" data-category="ejercicio">
+        <div class="blog-img" style="background:linear-gradient(135deg,#f0e8ff,#c8a8e8);">
+          <!-- <img src="images/blog-ejercicio.jpg" alt="Ejercicio en el primer trimestre" loading="lazy"> -->
+          <div class="blog-img-inner">
+            <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="35" r="18" fill="#7A1FA1" opacity="0.3"/><ellipse cx="50" cy="70" rx="28" ry="33" fill="#7A1FA1" opacity="0.2"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-cat">Ejercicio</span>
+          <h3>5 ejercicios seguros en el primer trimestre</h3>
+          <p>El primer trimestre puede ser desafiante: náuseas, cansancio, cambios hormonales. Aún así, el movimiento suave puede ser tu mejor aliado para sentirte mejor cada día.</p>
+          <div class="blog-meta">
+            <span>15 Mar 2026</span>
+            <a href="#" class="read-more">Leer artículo →</a>
+          </div>
+        </div>
+      </article>
+      <article class="blog-card" data-category="nutricion">
+        <div class="blog-img" style="background:linear-gradient(135deg,#fdf3d8,#e8c877);">
+          <!-- <img src="images/blog-nutricion.jpg" alt="Nutrición en el embarazo" loading="lazy"> -->
+          <div class="blog-img-inner">
+            <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="35" fill="#C9A04E" opacity="0.2"/><path d="M30 55 Q50 30 70 55" stroke="#C9A04E" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-cat">Nutrición</span>
+          <h3>Qué comer en cada trimestre</h3>
+          <p>Guía práctica de alimentación consciente para nutrir a tu bebé y cuidarte a ti sin restricciones ni culpa.</p>
+          <div class="blog-meta"><span>8 Mar 2026</span><a href="#" class="read-more">Leer →</a></div>
+        </div>
+      </article>
+      <article class="blog-card" data-category="postparto">
+        <div class="blog-img" style="background:linear-gradient(135deg,#edf7e8,#99CD85);">
+          <!-- <img src="images/blog-postparto.jpg" alt="Recuperación postparto" loading="lazy"> -->
+          <div class="blog-img-inner">
+            <svg viewBox="0 0 100 100" fill="none"><ellipse cx="50" cy="60" rx="28" ry="36" fill="#7aab66" opacity="0.25"/><circle cx="50" cy="32" r="16" fill="#7aab66" opacity="0.3"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-cat">Postparto</span>
+          <h3>Recuperación postparto: sin apuros</h3>
+          <p>Cuándo volver al movimiento, qué priorizar y cómo escuchar a tu cuerpo en esta nueva etapa.</p>
+          <div class="blog-meta"><span>1 Mar 2026</span><a href="#" class="read-more">Leer →</a></div>
+        </div>
+      </article>
+      <article class="blog-card" data-category="bienestar">
+        <div class="blog-img" style="background:linear-gradient(135deg,#f5edfb,#c0aee0);">
+          <!-- <img src="images/blog-bienestar.jpg" alt="Respiración consciente" loading="lazy"> -->
+          <div class="blog-img-inner">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M50 20 Q68 38 50 55 Q32 38 50 20Z" fill="#7A1FA1" opacity="0.25"/><circle cx="50" cy="70" r="12" fill="#7A1FA1" opacity="0.15"/></svg>
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-cat">Bienestar</span>
+          <h3>Respiración consciente para embarazadas</h3>
+          <p>Técnicas para reducir el estrés y conectar profundamente con tu bebé en cualquier momento del día.</p>
+          <div class="blog-meta"><span>22 Feb 2026</span><a href="#" class="read-more">Leer →</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="blog-newsletter reveal reveal-scale">
+      <div class="newsletter-bg-text">newsletter</div>
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h3>Tips semanales en tu bandeja de entrada</h3>
+          <p>Suscríbete y recibe consejos honestos, ejercicios y recetas cada semana. Sin spam, solo amor.</p>
+        </div>
+        <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" onsubmit="handleNewsletter(event)">
+          <input type="hidden" name="form-name" value="newsletter"/>
+          <input type="email" name="email" placeholder="Tu correo electrónico" required/>
+          <button type="submit" class="btn btn-primary">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section testimonios" id="testimonios">
+  <div class="container">
+    <div class="section-header centered reveal reveal-up">
+      <span class="section-tag">Historias reales</span>
+      <h2>Lo que dicen <em>ellas</em></h2>
+      <p>Cada historia es única. Cada proceso, sagrado.</p>
+    </div>
+    <div class="testimonios-grid stagger-children">
+      <div class="testimonio-card featured-t">
+        <div class="t-top">
+          <div class="t-avatar purple">V</div>
+          <div><div class="t-name">Valentina M.</div><div class="t-sub">2.° trimestre · Santiago</div><div class="t-stars">★★★★★</div></div>
+        </div>
+        <p class="t-text">"Llegué con mucho miedo a moverme en mi primer trimestre. Maiten me enseñó que el movimiento no es un riesgo, es un regalo. Terminé mi embarazo más fuerte que al principio."</p>
+      </div>
+      <div class="testimonio-card">
+        <div class="t-top">
+          <div class="t-avatar gold">C</div>
+          <div><div class="t-name">Catalina R.</div><div class="t-sub">3.er trimestre · Valparaíso</div><div class="t-stars">★★★★★</div></div>
+        </div>
+        <p class="t-text">"Las sesiones de asesoría me cambiaron la vida. Por fin entendí cómo alimentarme sin culpa y cómo preparar mi cuerpo para el parto."</p>
+      </div>
+      <div class="testimonio-card">
+        <div class="t-top">
+          <div class="t-avatar sage">A</div>
+          <div><div class="t-name">Andrea L.</div><div class="t-sub">Postparto · 4 meses</div><div class="t-stars">★★★★★</div></div>
+        </div>
+        <p class="t-text">"El postparto fue difícil, pero tener a Maiten acompañándome hizo toda la diferencia. Me enseñó a escuchar mi cuerpo sin compararlo."</p>
+      </div>
+      <div class="testimonio-card">
+        <div class="t-top">
+          <div class="t-avatar lavanda">S</div>
+          <div><div class="t-name">Sofía G.</div><div class="t-sub">1.er trimestre · Online</div><div class="t-stars">★★★★★</div></div>
+        </div>
+        <p class="t-text">"Nunca había hecho ejercicio y estaba aterrada. Maiten tiene una paciencia y una energía especial. Me siento orgullosa de mí misma cada sesión."</p>
+      </div>
+      <div class="testimonio-card">
+        <div class="t-top">
+          <div class="t-avatar purple">M</div>
+          <div><div class="t-name">Marcela P.</div><div class="t-sub">Postparto · 2 meses</div><div class="t-stars">★★★★★</div></div>
+        </div>
+        <p class="t-text">"La recomiendo con el corazón. Es profesional, empática y siempre está disponible cuando más la necesitas. Mi embarazo fue hermoso gracias a ella."</p>
+      </div>
+      <div class="testimonio-card">
+        <div class="t-top">
+          <div class="t-avatar gold">R</div>
+          <div><div class="t-name">Renata F.</div><div class="t-sub">2.° trimestre · Buenos Aires</div><div class="t-stars">★★★★★</div></div>
+        </div>
+        <p class="t-text">"Empecé en el segundo trimestre y ojalá lo hubiera hecho antes. Cada ejercicio fue seguro, ajustado y sobre todo: con mucho amor."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-side reveal reveal-left">
+        <span class="section-tag">FAQ</span>
+        <h2>Preguntas <em>frecuentes</em></h2>
+        <p>Resuelvo todas tus dudas antes de comenzar. Si no encuentras tu pregunta aquí, escríbeme.</p>
+        <div class="faq-box">
+          <h4>¿Tienes otra duda?</h4>
+          <p>Escríbeme directamente y te respondo en menos de 1 hora.</p>
+          <a href="#contacto" class="btn btn-gold">Contactar ahora</a>
+        </div>
+      </div>
+      <div class="faq-list stagger-children">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Es seguro hacer ejercicio durante el embarazo?<span class="faq-arrow">↓</span></button>
+          <div class="faq-a"><p>Sí, el ejercicio moderado y adaptado es altamente recomendado durante el embarazo. Reduce el riesgo de complicaciones, mejora el estado de ánimo y prepara tu cuerpo para el parto. Siempre trabajamos con el aval de tu médico y adaptamos cada movimiento a tu condición.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Puedo empezar en cualquier trimestre?<span class="faq-arrow">↓</span></button>
+          <div class="faq-a"><p>¡Absolutamente! El programa se adapta a tu trimestre actual. Tanto si estás en el primer mes como si estás próxima al parto, hay trabajo seguro y beneficioso para ti. También acompañamos el postparto desde las primeras semanas de recuperación.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cómo son las sesiones online?<span class="faq-arrow">↓</span></button>
+          <div class="faq-a"><p>Las sesiones son por videollamada (Zoom o Google Meet). Solo necesitas conexión a internet, ropa cómoda y una esterilla. La experiencia es igual de personalizada: te veo, te corrijo y ajustamos en tiempo real. Muchas de mis clientas las prefieren por la comodidad.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si tengo un embarazo de riesgo?<span class="faq-arrow">↓</span></button>
+          <div class="faq-a"><p>Trabajamos en estrecha comunicación con tu equipo médico. Hay muchas formas de moverse de manera segura incluso en embarazos de riesgo. La evaluación inicial nos permite definir qué es apropiado para ti específicamente.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cuál es la política de cancelación?<span class="faq-arrow">↓</span></button>
+          <div class="faq-a"><p>Puedes cancelar o reagendar tu sesión con hasta 24 horas de anticipación sin ningún costo. Entendemos que el embarazo trae imprevistos y somos completamente flexibles. Tu bienestar es lo primero siempre.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">¿Cuándo puedo retomar el ejercicio postparto?<span class="faq-arrow">↓</span></button>
+          <div class="faq-a"><p>Depende del tipo de parto y tu recuperación individual. Generalmente entre las 6 y 8 semanas después del parto vaginal, y un poco más si fue cesárea. Comenzamos con ejercicios suaves de suelo pélvico y respiración antes de avanzar.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contacto" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal reveal-left">
+        <span class="section-tag">Hablemos</span>
+        <h2>Agenda tu consulta <em>gratuita</em></h2>
+        <p>La primera sesión es sin costo y sin compromiso. Cuéntame dónde estás y cómo te puedo acompañar.</p>
+        <div class="contact-options stagger-children">
+          <a href="https://wa.me/56912345678" class="contact-opt whatsapp" target="_blank">
+            <span class="contact-opt-icon">📱</span>
+            <div><strong>WhatsApp</strong><span>Respondo en menos de 1 hora</span></div>
+          </a>
+          <a href="mailto:hola@maitenmovimiento.com" class="contact-opt email">
+            <span class="contact-opt-icon">✉️</span>
+            <div><strong>Email</strong><span>hola@maitenmovimiento.com</span></div>
+          </a>
+          <div class="contact-opt">
+            <span class="contact-opt-icon">📷</span>
+            <div><strong>Instagram</strong><span>@maitenmovimiento</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal reveal-right">
+        <form name="consulta" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContact(event)">
+          <input type="hidden" name="form-name" value="consulta"/>
+          <p style="display:none"><input name="bot-field"/></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" name="nombre" placeholder="Tu nombre" required/>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="tu@email.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>¿En qué etapa estás?</label>
+            <select name="etapa">
+              <option value="">Selecciona tu etapa</option>
+              <option>1.er trimestre (semanas 1–12)</option>
+              <option>2.° trimestre (semanas 13–26)</option>
+              <option>3.er trimestre (semanas 27–40)</option>
+              <option>Postparto</option>
+              <option>Planificando un embarazo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cuéntame sobre ti</label>
+            <textarea name="mensaje" placeholder="¿Qué necesitas? ¿Tienes alguna condición especial? ¿Has hecho ejercicio antes?" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">Enviar mensaje 🌿</button>
+          <p class="form-note">* Primera consulta siempre gratuita · Sin compromiso</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#hero" class="logo logo-light">
+        <span class="logo-symbol">✿</span>
+        <span class="logo-text">maiten<strong>movimiento</strong></span>
+      </a>
+      <p>Acompañando mamás en su proceso más hermoso. Movimiento con amor, ciencia con empatía.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="YouTube">▶️</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Navegar</h4>
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#testimonios">Historias</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Entrenamiento personalizado</a></li>
+        <li><a href="#servicios">Asesoría 1 a 1</a></li>
+        <li><a href="#contacto">Consulta gratuita</a></li>
+      </ul>
+    </div>
+    <div class="footer-cta">
+      <h4>¿Lista para comenzar?</h4>
+      <p>Tu cuerpo y tu bebé te lo agradecerán. Primera consulta sin costo.</p>
+      <a href="#contacto" class="btn btn-primary">Reservar consulta</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Maitenmovimiento · Todos los derechos reservados</p>
+    <p>Hecho con 💜 para mamás</p>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/56912345678" class="whatsapp-fab" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="27" height="27"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
