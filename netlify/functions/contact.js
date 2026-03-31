@@ -38,7 +38,7 @@ exports.handler = async (event) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from:      'Maitenmovimiento <consultas@maitenmovimiento.com>',
+      from:      'Maitenmovimiento <consultas@maitenmovimiento.cl>',
       to:        'maitenmovimiento@gmail.com',
       reply_to:  email,
       subject:  `💜 Nueva consulta de ${nombre}`,
