@@ -24,15 +24,23 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Faltan campos requeridos' }) };
   }
 
+  // Verificar que la API key esté configurada
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY no está configurada como variable de entorno en Netlify.');
+    return {
+      statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Configuración incompleta en el servidor.' }),
+    };
+  }
+
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      // Usa tu dominio verificado en Resend. Mientras configuras el dominio,
-      // puedes usar: from: 'onboarding@resend.dev'
-      from:     'Maitenmovimiento <consultas@maitenmovimiento.com>',
-      to:       'maitenmovimiento@gmail.com',
-      replyTo:  email,
+      from:      'Maitenmovimiento <consultas@maitenmovimiento.com>',
+      to:        'maitenmovimiento@gmail.com',
+      reply_to:  email,
       subject:  `💜 Nueva consulta de ${nombre}`,
       html: `
         <!DOCTYPE html>
@@ -84,10 +92,12 @@ exports.handler = async (event) => {
     };
 
   } catch (err) {
-    console.error('Resend error:', err);
+    console.error('Resend error:', JSON.stringify(err, null, 2));
+    const msg = err?.message || 'Error desconocido';
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error al enviar el correo. Intenta de nuevo.' }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: `Error al enviar el correo: ${msg}` }),
     };
   }
 };
