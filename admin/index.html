@@ -244,8 +244,22 @@
             <textarea id="postContent" rows="9" placeholder="Escribe aquí el contenido completo del artículo..."></textarea>
           </div>
           <div class="field span-2">
-            <label>Imagen <span class="label-hint">(URL o ruta: images/foto.jpg)</span></label>
-            <input type="text" id="postImage" placeholder="https://... o images/mi-imagen.jpg"/>
+            <label>Imagen <span class="label-hint">(sube una foto o pega una URL)</span></label>
+            <div class="img-upload-area" id="imgUploadArea">
+              <div class="img-preview-wrap" id="imgPreviewWrap" style="display:none">
+                <img id="imgPreview" alt="Preview"/>
+                <button type="button" class="img-remove-btn" id="imgRemoveBtn">✕ Quitar imagen</button>
+              </div>
+              <label class="img-drop-zone" id="imgDropZone" for="postImageFile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="30" height="30"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                <span>Haz clic o arrastrá una imagen aquí</span>
+                <span class="label-hint">Se recortará automáticamente a 16:9 · Máx 5 MB</span>
+              </label>
+              <input type="file" id="postImageFile" accept="image/*" style="display:none"/>
+            </div>
+            <p class="img-url-toggle-label">¿Preferís pegar una URL? <button type="button" id="toggleUrlInput">Usar URL</button></p>
+            <input type="text" id="postImage" placeholder="https://... o images/foto.jpg" style="display:none"/>
+            <canvas id="cropCanvas" style="display:none"></canvas>
           </div>
           <div class="field span-2">
             <label class="toggle-label">

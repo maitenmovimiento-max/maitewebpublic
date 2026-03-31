@@ -5,10 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maitenmovimiento – Fitness para Embarazadas</title>
   <meta name="description" content="Entrenamiento personalizado y asesoría 1 a 1 para embarazadas y postparto."/>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="images/favicon.svg" sizes="any"/>
+  <link rel="apple-touch-icon" href="images/favicon.svg"/>
+  <meta name="theme-color" content="#7A1FA1"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}var d=((t,i)=>{i=i||"";var s=t.split(".");return s.pop(),s.pop(),i.split("?")[0]+(s.length?"#"+s.join("."):"")})(i,s&&s.api_host);p=t.createElement("script"),p.type="text/javascript",p.async=!0,p.src=d+"/static/array.js",(n=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,n);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+" (stub)"},o="init me ws getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug capture".split(" "),r=0;r<o.length;r++)g(u,o[r]);e._i.push([i,s,a])},e.__SV=1.7)}(document,window.posthog||[]);
+    posthog.init('phc_rrVrXBVBkXQ5CPyTVsmzG6Q3vFt3w8qTcC99P5u3hotE', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+    });
+  </script>
 </head>
 <body>
 
@@ -153,7 +165,7 @@
 
       <div class="about-text reveal reveal-right">
         <span class="section-tag">Sobre mí</span>
-        <h2>Hola, soy <em>Maiten</em></h2>
+        <h2>Hola, soy <em>Maite</em></h2>
         <p class="about-lead">Entrenadora especializada en fitness prenatal y postparto, apasionada por acompañar a las mujeres en uno de los momentos más transformadores de sus vidas.</p>
         <p>Sé de primera mano lo que se siente cuando tu cuerpo cambia y no sabes cómo cuidarte. Por eso decidí especializarme: para que ninguna mamá tenga que atravesar sola ese camino.</p>
         <p>Mi enfoque combina movimiento seguro, escucha activa y mucho respeto por los ritmos de cada cuerpo. No hay dos embarazos iguales, y eso me parece lo más hermoso de este trabajo.</p>
@@ -355,13 +367,13 @@
         <h2>Agenda tu consulta <em>gratuita</em></h2>
         <p>La primera sesión es sin costo y sin compromiso. Cuéntame dónde estás y cómo te puedo acompañar.</p>
         <div class="contact-options stagger-children">
-          <a href="https://wa.me/56912345678" class="contact-opt whatsapp" target="_blank">
+          <a href="https://wa.me/56987572067" class="contact-opt whatsapp" target="_blank">
             <span class="contact-opt-icon">📱</span>
             <div><strong>WhatsApp</strong><span>Respondo en menos de 1 hora</span></div>
           </a>
-          <a href="mailto:hola@maitenmovimiento.com" class="contact-opt email">
+          <a href="mailto:maitenmovimiento@gmail.com" class="contact-opt email">
             <span class="contact-opt-icon">✉️</span>
-            <div><strong>Email</strong><span>hola@maitenmovimiento.com</span></div>
+            <div><strong>Email</strong><span>maitenmovimiento@gmail.com</span></div>
           </a>
           <div class="contact-opt">
             <span class="contact-opt-icon">📷</span>
@@ -370,9 +382,7 @@
         </div>
       </div>
       <div class="contact-form-wrap reveal reveal-right">
-        <form name="consulta" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContact(event)">
-          <input type="hidden" name="form-name" value="consulta"/>
-          <p style="display:none"><input name="bot-field"/></p>
+        <form id="contactForm" onsubmit="handleContact(event)" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label>Nombre</label>
@@ -452,7 +462,7 @@
 </footer>
 
 <!-- WhatsApp FAB -->
-<a href="https://wa.me/56912345678" class="whatsapp-fab" target="_blank" aria-label="WhatsApp">
+<a href="https://wa.me/56987572067" class="whatsapp-fab" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" width="27" height="27"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 

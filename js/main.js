@@ -62,7 +62,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(el => {
     if (el.isIntersecting) { el.target.classList.add('visible'); revealObserver.unobserve(el.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 function observeReveal() {
   document.querySelectorAll('.reveal, .stagger-children').forEach(el => revealObserver.observe(el));
@@ -98,7 +98,7 @@ if (heroStats) statObserver.observe(heroStats);
 // --- PARALLAX hero image ---
 window.addEventListener('scroll', () => {
   const frame = document.querySelector('.hero-img-frame');
-  if (frame) frame.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+  if (frame) frame.style.transform = `translateY(${window.scrollY * 0.08}px)`;
 });
 
 // --- TOAST ---
@@ -115,10 +115,43 @@ function handleNewsletter(e) {
   e.target.reset();
 }
 
-function handleContact(e) {
+async function handleContact(e) {
   e.preventDefault();
-  showToast('💜 ¡Mensaje enviado! Te respondo a la brevedad.');
-  e.target.reset();
+  const form = e.target;
+  const btn  = form.querySelector('button[type="submit"]');
+
+  const nombre  = form.querySelector('[name="nombre"]')?.value.trim()  || '';
+  const email   = form.querySelector('[name="email"]')?.value.trim()   || '';
+  const etapa   = form.querySelector('[name="etapa"]')?.value          || '';
+  const mensaje = form.querySelector('[name="mensaje"]')?.value.trim() || '';
+
+  if (!nombre || !email || !mensaje) {
+    showToast('⚠ Por favor completá todos los campos requeridos.');
+    return;
+  }
+
+  const originalText = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
+
+  try {
+    const res = await fetch('/.netlify/functions/contact', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ nombre, email, etapa, mensaje }),
+    });
+
+    if (res.ok) {
+      showToast('💜 ¡Mensaje enviado! Te respondo a la brevedad.');
+      form.reset();
+    } else {
+      const data = await res.json().catch(() => ({}));
+      showToast('⚠ ' + (data.error || 'No se pudo enviar. Intentá de nuevo.'));
+    }
+  } catch {
+    showToast('⚠ Error de conexión. Revisá tu internet e intentá de nuevo.');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = originalText; }
+  }
 }
 
 // --- ACTIVE NAV HIGHLIGHT ---
