@@ -355,6 +355,16 @@ p { line-height: 1.78; }
 .service-card:hover .service-number { color: var(--purple-pale); }
 .service-card.featured .service-number { color: rgba(255,255,255,0.05); }
 
+@media (max-width: 768px) {
+  .service-number { font-size: 5rem; top: 1.2rem; right: 1.6rem; }
+}
+@media (max-width: 480px) {
+  .service-number { font-size: 4.5rem; top: 1rem; right: 1.4rem; opacity: 0.7; }
+}
+@media (max-width: 360px) {
+  .service-number { font-size: 3.8rem; top: 0.8rem; right: 1.2rem; opacity: 0.6; }
+}
+
 .service-badge {
   display: inline-block; font-size: 0.63rem; font-weight: 800;
   letter-spacing: 0.12em; text-transform: uppercase;
@@ -601,6 +611,19 @@ p { line-height: 1.78; }
   border-left: 3px solid var(--sage); box-shadow: var(--shadow-md); pointer-events: none;
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
+
+/* Responsive FAB y Toast */
+@media (max-width: 768px) {
+  .whatsapp-fab { bottom: 2rem; right: 2rem; width: 52px; height: 52px; font-size: 1.4rem; }
+}
+@media (max-width: 480px) {
+  .whatsapp-fab { bottom: 1.5rem; right: 1.5rem; width: 48px; height: 48px; font-size: 1.2rem; }
+  .toast { padding: 0.85rem 1.5rem; font-size: 0.75rem; bottom: 5.5rem; }
+}
+@media (max-width: 360px) {
+  .whatsapp-fab { bottom: 1.2rem; right: 1.2rem; width: 44px; height: 44px; font-size: 1rem; }
+  .toast { padding: 0.75rem 1.2rem; font-size: 0.70rem; bottom: 5rem; }
+}
 
 /* REVEAL */
 .reveal { opacity: 0; transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
