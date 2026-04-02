@@ -468,6 +468,12 @@ p { line-height: 1.78; }
 }
 .newsletter-form input:focus { border-color: var(--purple); }
 
+/* COMUNIDAD */
+.newsletter-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem; flex-shrink: 0; }
+.comunidad-btn { background: #25D366 !important; border-color: #25D366 !important; gap: 0.7rem; font-size: 0.82rem; padding: 1rem 2rem; }
+.comunidad-btn:hover { background: #1da851 !important; border-color: #1da851 !important; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.35); }
+.comunidad-note { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+
 /* TESTIMONIOS */
 .testimonios { background: var(--cream); }
 .testimonios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -577,10 +583,12 @@ p { line-height: 1.78; }
   width: 38px; height: 38px; border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.15);
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.9rem; color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.5);
   transition: all var(--t);
 }
+.social-links a svg { width: 18px; height: 18px; }
 .social-links a:hover { background: var(--purple); border-color: var(--purple); color: white; transform: translateY(-3px); }
+.social-links a[aria-label="Comunidad WhatsApp"]:hover { background: #25D366; border-color: #25D366; }
 .footer-links h4 {
   font-family: 'Montserrat', sans-serif; font-size: 0.62rem; font-weight: 800;
   letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;
