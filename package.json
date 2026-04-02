@@ -1,0 +1,9 @@
+{
+  "name": "maitenmovimiento",
+  "version": "1.0.0",
+  "description": "Sitio web Maitenmovimiento — Fitness prenatal y postparto",
+  "private": true,
+  "dependencies": {
+    "resend": "^3.2.0"
+  }
+}

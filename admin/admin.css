@@ -435,6 +435,52 @@ h1, h2, h3, h4 {
 .toggle-label input:checked ~ .toggle-track .toggle-thumb { left: 23px; }
 .toggle-label span:last-child { font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); }
 
+/* ── IMAGE UPLOAD ────────────────────────── */
+.img-upload-area { display: flex; flex-direction: column; gap: 0; }
+
+.img-drop-zone {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 1.8rem 1.2rem;
+  border: 2px dashed var(--border-strong); border-radius: 12px;
+  background: var(--cream); cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center; color: var(--muted);
+}
+.img-drop-zone:hover, .img-drop-zone.drag-over {
+  border-color: var(--purple); background: var(--purple-pale); color: var(--purple);
+}
+.img-drop-zone svg { opacity: 0.5; transition: opacity 0.2s; }
+.img-drop-zone:hover svg, .img-drop-zone.drag-over svg { opacity: 0.9; }
+.img-drop-zone span:nth-child(2) { font-size: 0.82rem; font-weight: 600; color: inherit; }
+.img-drop-zone span:nth-child(3) { font-size: 0.7rem; color: var(--muted); }
+
+.img-preview-wrap {
+  position: relative; border-radius: 12px; overflow: hidden;
+  background: var(--cream); border: 1.5px solid var(--border);
+  aspect-ratio: 16 / 9;
+}
+.img-preview-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.img-remove-btn {
+  position: absolute; top: 0.6rem; right: 0.6rem;
+  background: rgba(24,16,31,0.72); color: white;
+  border: none; border-radius: 6px;
+  padding: 0.3rem 0.7rem; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.06em; cursor: pointer;
+  transition: background 0.18s;
+}
+.img-remove-btn:hover { background: var(--danger); }
+
+.img-url-toggle-label {
+  font-size: 0.7rem; color: var(--muted); margin-top: 0.55rem;
+}
+.img-url-toggle-label button {
+  color: var(--purple); font-size: 0.7rem; font-weight: 700;
+  text-decoration: underline; cursor: pointer;
+}
+.img-url-toggle-label button:hover { opacity: 0.75; }
+
 /* ── TOAST ───────────────────────────────── */
 .admin-toast {
   position: fixed; bottom: 2rem; left: 50%;

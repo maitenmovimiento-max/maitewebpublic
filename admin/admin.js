@@ -261,6 +261,63 @@ function togglePublish(id) {
   showToast(post.published ? '◉ Post despublicado' : '✓ Post ahora publicado');
 }
 
+// ── IMAGE UPLOAD / CROP ───────────────────────────────────
+
+const IMG_TARGET_W = 800;
+const IMG_TARGET_H = 450;
+const IMG_QUALITY  = 0.82;
+
+function resetImageField() {
+  document.getElementById('postImage').value   = '';
+  document.getElementById('postImage').style.display = 'none';
+  document.getElementById('imgPreview').src    = '';
+  document.getElementById('imgPreviewWrap').style.display = 'none';
+  document.getElementById('imgDropZone').style.display    = 'flex';
+  document.getElementById('imgUploadArea').classList.remove('has-image');
+  document.getElementById('toggleUrlInput').textContent = 'Usar URL';
+}
+
+function setImagePreview(src) {
+  document.getElementById('postImage').value         = src;
+  document.getElementById('imgPreview').src          = src;
+  document.getElementById('imgPreviewWrap').style.display = 'block';
+  document.getElementById('imgDropZone').style.display   = 'none';
+  document.getElementById('imgUploadArea').classList.add('has-image');
+}
+
+function processImageFile(file) {
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) {
+    showToast('⚠ La imagen supera 5 MB');
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.getElementById('cropCanvas');
+      canvas.width  = IMG_TARGET_W;
+      canvas.height = IMG_TARGET_H;
+      const ctx = canvas.getContext('2d');
+      const srcRatio = img.width / img.height;
+      const dstRatio = IMG_TARGET_W / IMG_TARGET_H;
+      let sx, sy, sw, sh;
+      if (srcRatio > dstRatio) {
+        sh = img.height; sw = sh * dstRatio;
+        sx = (img.width - sw) / 2; sy = 0;
+      } else {
+        sw = img.width; sh = sw / dstRatio;
+        sx = 0; sy = (img.height - sh) / 2;
+      }
+      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, IMG_TARGET_W, IMG_TARGET_H);
+      const dataUrl = canvas.toDataURL('image/jpeg', IMG_QUALITY);
+      setImagePreview(dataUrl);
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
 // ── MODAL EDITOR ──────────────────────────────────────────
 
 function openNewModal() {
@@ -269,6 +326,7 @@ function openNewModal() {
   document.getElementById('postDate').value      = today();
   document.getElementById('postPublished').checked = true;
   document.getElementById('modalTitle').textContent = 'Nuevo post';
+  resetImageField();
   openModal('modalOverlay');
   document.getElementById('postTitle').focus();
 }
@@ -282,9 +340,24 @@ function openEditModal(id) {
   document.getElementById('postExcerpt').value    = p.excerpt  || '';
   document.getElementById('postContent').value    = p.content  || '';
   document.getElementById('postDate').value       = p.date     || today();
-  document.getElementById('postImage').value      = p.image    || '';
   document.getElementById('postPublished').checked = !!p.published;
   document.getElementById('modalTitle').textContent = 'Editar post';
+  // Imagen: mostrar preview si existe, o campo URL
+  resetImageField();
+  if (p.image) {
+    if (p.image.startsWith('data:') || p.image.startsWith('http') || p.image.startsWith('images/')) {
+      setImagePreview(p.image);
+      // Si es una URL (no data), mostrar también en el campo de texto por si quiere editarla
+      if (!p.image.startsWith('data:')) {
+        document.getElementById('postImage').value = p.image;
+        document.getElementById('postImage').style.display = 'block';
+        document.getElementById('imgDropZone').style.display = 'none';
+        document.getElementById('imgPreviewWrap').style.display = 'none';
+        document.getElementById('imgUploadArea').classList.remove('has-image');
+        document.getElementById('toggleUrlInput').textContent = 'Usar upload';
+      }
+    }
+  }
   openModal('modalOverlay');
   document.getElementById('postTitle').focus();
 }
@@ -529,6 +602,47 @@ document.addEventListener('DOMContentLoaded', () => {
       filterAndRender();
       renderDashboard();
       showToast('✓ Posts restablecidos por defecto');
+    }
+  });
+
+  // ── Image upload: file input change
+  document.getElementById('postImageFile').addEventListener('change', e => {
+    if (e.target.files[0]) { processImageFile(e.target.files[0]); e.target.value = ''; }
+  });
+
+  // ── Image upload: drag and drop
+  const dropZone = document.getElementById('imgDropZone');
+  dropZone.addEventListener('dragover', e => {
+    e.preventDefault();
+    dropZone.classList.add('drag-over');
+  });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) processImageFile(file);
+    else showToast('⚠ Solo se aceptan archivos de imagen');
+  });
+
+  // ── Image upload: quitar imagen
+  document.getElementById('imgRemoveBtn').addEventListener('click', resetImageField);
+
+  // ── Image upload: toggle URL input
+  document.getElementById('toggleUrlInput').addEventListener('click', () => {
+    const urlInput = document.getElementById('postImage');
+    const dz       = document.getElementById('imgDropZone');
+    const pw       = document.getElementById('imgPreviewWrap');
+    if (urlInput.style.display === 'none') {
+      urlInput.style.display = 'block';
+      dz.style.display       = 'none';
+      pw.style.display       = 'none';
+      document.getElementById('toggleUrlInput').textContent = 'Usar upload';
+      urlInput.focus();
+    } else {
+      urlInput.style.display = 'none';
+      dz.style.display       = 'flex';
+      document.getElementById('toggleUrlInput').textContent = 'Usar URL';
     }
   });
 
