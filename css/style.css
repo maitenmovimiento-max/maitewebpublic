@@ -864,8 +864,9 @@ p { line-height: 1.78; }
 
 /* ── MOBILE FIXES ──────────────────────────────────────────── */
 
-/* Ocultar tarjeta flotante "+5 años" en mobile */
+/* Ocultar imagen y decoraciones de "Sobre mí" en mobile (la foto ya aparece bajo el carrusel) */
 @media (max-width: 768px) {
+  .about-image-stack { display: none; }
   .about-float-card { display: none; }
   .about-accent { display: none; }
 }
