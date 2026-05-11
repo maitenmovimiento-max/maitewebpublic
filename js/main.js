@@ -48,6 +48,10 @@ hamburger.addEventListener('click', () => {
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.classList.remove('open'); });
 });
+document.getElementById('navCloseBtn').addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('open');
+});
 
 // --- FAQ ---
 function toggleFaq(btn) {
