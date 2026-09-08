@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock3 } from "lucide-react";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { GuideCover } from "@/components/guide-cover";
-import { getPublishedGuide } from "@/lib/guides";
+import { getPublishedGuide, getPublishedGuideRedirect } from "@/lib/guides";
 import { sanitizeGuideHtml } from "@/lib/sanitize";
 
 export const dynamic = "force-dynamic";
@@ -32,7 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GuidePage({ params }: Props) {
   const { slug } = await params;
   const guide = await getPublishedGuide(slug);
-  if (!guide) notFound();
+  if (!guide) {
+    const redirectSlug = await getPublishedGuideRedirect(slug);
+    if (redirectSlug) permanentRedirect(`/guias/${redirectSlug}`);
+    notFound();
+  }
 
   const formattedDate = guide.publishedAt
     ? new Intl.DateTimeFormat("es-CL", { day: "numeric", month: "long", year: "numeric" }).format(guide.publishedAt)

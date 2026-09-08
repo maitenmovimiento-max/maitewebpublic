@@ -21,3 +21,15 @@ test("las páginas públicas no tienen violaciones críticas de accesibilidad", 
   const results = await new AxeBuilder({ page }).analyze();
   expect(results.violations.filter((violation) => violation.impact === "critical")).toEqual([]);
 });
+
+test("el perímetro administrativo rechaza solicitudes no autorizadas", async ({ page, request }) => {
+  await page.goto("/admin");
+  await expect(page.getByRole("heading", { name: /panel maiten/i })).toBeVisible();
+  const unauthorized = await request.get("/api/admin/guides");
+  expect(unauthorized.status()).toBe(401);
+  const crossOrigin = await request.post("/api/admin/login", {
+    headers: { origin: "https://sitio-malicioso.test" },
+    data: { password: "incorrecta" },
+  });
+  expect(crossOrigin.status()).toBe(403);
+});

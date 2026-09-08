@@ -8,17 +8,18 @@ Sitio web de Maite en Movimiento, construido con Next.js 16, React 19, TypeScrip
 2. Copia `.env.example` como `.env.local` y completa las variables.
 3. Ejecuta `pnpm install`.
 4. Aplica la migración con `pnpm db:migrate`.
-5. Inicia el sitio con `pnpm dev`.
+5. Crea las guías iniciales con `pnpm db:seed`.
+6. Inicia el sitio con `pnpm dev`.
 
 Sin `DATABASE_URL`, el sitio muestra datos demostrativos únicamente en desarrollo. En producción la base es obligatoria.
 
 ## Base de datos
 
-La migración inicial está en `db/migrations/0000_guides.sql`. La aplicación acepta una URL Neon en `DATABASE_URL`; también reconoce `NETLIFY_DATABASE_URL` para compatibilidad con la integración anterior de Neon en Netlify. Usa siempre una conexión con pooler y SSL.
+Las migraciones versionadas están en `db/migrations/` e incluyen el registro interno de Drizzle. La aplicación acepta una URL Neon con pooler en `DATABASE_URL`; `DIRECT_DATABASE_URL` se usa solo para migraciones. También reconoce `NETLIFY_DATABASE_URL` para compatibilidad con la integración anterior de Neon en Netlify.
 
 ## Seguridad del panel
 
-- La contraseña nunca se guarda en texto plano; `pnpm auth:hash "una-clave-larga"` genera el hash y un secreto de sesión.
+- La contraseña nunca se guarda en texto plano; `pnpm auth:hash` la solicita de forma interactiva y genera el hash y un secreto de sesión.
 - La sesión usa una cookie firmada, `HttpOnly`, `SameSite=Strict` y `Secure` en producción.
 - Las mutaciones validan el origen y todo HTML se valida y sanitiza al guardar y al mostrar.
 - No subas archivos `.env*` ni URLs de conexión al repositorio.

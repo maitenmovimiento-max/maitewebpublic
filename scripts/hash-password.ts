@@ -1,8 +1,12 @@
 import { randomBytes, scryptSync } from "node:crypto";
+import { createInterface } from "node:readline/promises";
+import { stdin, stdout } from "node:process";
 
-const password = process.argv[2];
+const prompt = createInterface({ input: stdin, output: stdout });
+const password = await prompt.question("Contraseña nueva del panel (mínimo 12 caracteres): ");
+prompt.close();
 if (!password || password.length < 12) {
-  console.error('Uso: pnpm auth:hash "una-clave-de-al-menos-12-caracteres"');
+  console.error("La contraseña debe tener al menos 12 caracteres.");
   process.exit(1);
 }
 

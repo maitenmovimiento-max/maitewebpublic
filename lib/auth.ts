@@ -1,19 +1,22 @@
-import { createHmac, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
+import { createHmac, randomBytes, scrypt, scryptSync, timingSafeEqual } from "node:crypto";
+import { promisify } from "node:util";
 import { cookies } from "next/headers";
 import { env } from "@/lib/env";
 
 export const SESSION_COOKIE = "mm_admin_session";
 const SESSION_TTL_SECONDS = 60 * 60 * 8;
+const scryptAsync = promisify(scrypt);
 
 export function hashPassword(password: string, salt = randomBytes(16).toString("hex")) {
   return `${salt}:${scryptSync(password, salt, 64).toString("hex")}`;
 }
 
-export function verifyPassword(password: string, storedHash: string) {
+export async function verifyPassword(password: string, storedHash: string) {
   const [salt, expectedHex] = storedHash.split(":");
   if (!salt || !expectedHex) return false;
-  const actual = scryptSync(password, salt, 64);
   const expected = Buffer.from(expectedHex, "hex");
+  if (expected.length !== 64) return false;
+  const actual = await scryptAsync(password, salt, 64) as Buffer;
   return actual.length === expected.length && timingSafeEqual(actual, expected);
 }
 
@@ -55,6 +58,6 @@ export function sessionCookieOptions() {
 
 export function isSameOrigin(request: Request) {
   const origin = request.headers.get("origin");
-  if (!origin) return true;
+  if (!origin) return false;
   return origin === new URL(request.url).origin;
 }

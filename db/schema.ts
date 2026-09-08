@@ -30,3 +30,18 @@ export const guides = pgTable(
 
 export type Guide = typeof guides.$inferSelect;
 export type NewGuide = typeof guides.$inferInsert;
+
+export const adminLoginAttempts = pgTable("admin_login_attempts", {
+  key: text("key").primaryKey(),
+  count: integer("count").notNull().default(0),
+  windowStartedAt: timestamp("window_started_at", { withTimezone: true }).notNull().defaultNow(),
+  blockedUntil: timestamp("blocked_until", { withTimezone: true }),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+export const guideSlugRedirects = pgTable("guide_slug_redirects", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  oldSlug: text("old_slug").notNull().unique(),
+  guideId: uuid("guide_id").notNull().references(() => guides.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});

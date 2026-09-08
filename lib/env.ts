@@ -2,6 +2,7 @@ import { z } from "zod";
 
 const serverSchema = z.object({
   DATABASE_URL: z.string().url().optional(),
+  DIRECT_DATABASE_URL: z.string().url().optional(),
   ADMIN_PASSWORD_HASH: z.string().min(20).optional(),
   ADMIN_SESSION_SECRET: z.string().min(32).optional(),
   RESEND_API_KEY: z.string().optional(),
@@ -12,6 +13,7 @@ const serverSchema = z.object({
 export const env = serverSchema.parse({
   DATABASE_URL:
     process.env.DATABASE_URL || process.env.NETLIFY_DATABASE_URL || undefined,
+  DIRECT_DATABASE_URL: process.env.DIRECT_DATABASE_URL || undefined,
   ADMIN_PASSWORD_HASH: process.env.ADMIN_PASSWORD_HASH || undefined,
   ADMIN_SESSION_SECRET: process.env.ADMIN_SESSION_SECRET || undefined,
   RESEND_API_KEY: process.env.RESEND_API_KEY || undefined,

@@ -8,9 +8,10 @@ export function sanitizeGuideHtml(html: string) {
     ],
     allowedAttributes: {
       a: ["href", "target", "rel"],
-      img: ["src", "alt", "width", "height", "loading"],
+      img: ["src", "alt", "width", "height", "loading", "referrerpolicy"],
     },
     allowedSchemes: ["https", "mailto", "tel"],
+    allowProtocolRelative: false,
     transformTags: {
       a: (_tagName, attribs) => ({
         tagName: "a",
@@ -18,7 +19,7 @@ export function sanitizeGuideHtml(html: string) {
       }),
       img: (_tagName, attribs) => ({
         tagName: "img",
-        attribs: { ...attribs, loading: "lazy" },
+        attribs: { ...attribs, loading: "lazy", referrerpolicy: "no-referrer" },
       }),
     },
   });

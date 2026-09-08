@@ -52,12 +52,12 @@ export function AdminDashboard({ initialGuides, databaseConfigured }: { initialG
   }
 
   async function remove(guide: GuideDTO) {
-    if (!window.confirm(`¿Eliminar definitivamente “${guide.title}”?`)) return;
+    if (!window.confirm(`¿Archivar “${guide.title}”? Dejará de verse en la web, pero podrás recuperarla.`)) return;
     const response = await fetch(`/api/admin/guides/${guide.id}`, { method: "DELETE" });
     if (response.ok) {
       await refresh();
-      setNotice("Guía eliminada.");
-    } else setNotice("No pudimos eliminar la guía.");
+      setNotice("Guía archivada.");
+    } else setNotice("No pudimos archivar la guía.");
   }
 
   async function logout() {
@@ -83,7 +83,7 @@ export function AdminDashboard({ initialGuides, databaseConfigured }: { initialG
         </section>
         <section className="admin-panel" id="guides">
           <div className="admin-panel__header"><div><h2>Todas las guías</h2><p>Crea, revisa y publica contenido sin tocar código.</p></div><div className="admin-filters"><label><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar guía…" /></label><select aria-label="Filtrar por estado" value={status} onChange={(event) => setStatus(event.target.value)}><option value="">Todos los estados</option><option value="published">Publicadas</option><option value="draft">Borradores</option><option value="archived">Archivadas</option></select></div></div>
-          <div className="admin-table-wrap"><table className="admin-table"><thead><tr><th>Guía</th><th>Categoría</th><th>Estado</th><th>Actualizada</th><th><span className="sr-only">Acciones</span></th></tr></thead><tbody>{filtered.map((guide) => <tr key={guide.id}><td><strong>{guide.title}</strong><span>/{guide.slug}</span></td><td>{guide.category}</td><td><span className={`status status--${guide.status}`}>{guide.status === "published" ? "Publicada" : guide.status === "draft" ? "Borrador" : "Archivada"}</span></td><td>{new Intl.DateTimeFormat("es-CL", { dateStyle: "medium" }).format(new Date(guide.updatedAt))}</td><td><div className="row-actions"><button type="button" aria-label={`Editar ${guide.title}`} onClick={() => setEditing({ ...guide })}><FilePenLine /></button><button type="button" className="danger" aria-label={`Eliminar ${guide.title}`} onClick={() => remove(guide)}><Trash2 /></button></div></td></tr>)}</tbody></table>{!filtered.length && <p className="admin-empty">No hay guías que coincidan con estos filtros.</p>}</div>
+          <div className="admin-table-wrap"><table className="admin-table"><thead><tr><th>Guía</th><th>Categoría</th><th>Estado</th><th>Actualizada</th><th><span className="sr-only">Acciones</span></th></tr></thead><tbody>{filtered.map((guide) => <tr key={guide.id}><td><strong>{guide.title}</strong><span>/{guide.slug}</span></td><td>{guide.category}</td><td><span className={`status status--${guide.status}`}>{guide.status === "published" ? "Publicada" : guide.status === "draft" ? "Borrador" : "Archivada"}</span></td><td>{new Intl.DateTimeFormat("es-CL", { dateStyle: "medium" }).format(new Date(guide.updatedAt))}</td><td><div className="row-actions"><button type="button" aria-label={`Editar ${guide.title}`} onClick={() => setEditing({ ...guide })}><FilePenLine /></button><button type="button" className="danger" aria-label={`Archivar ${guide.title}`} onClick={() => remove(guide)}><Trash2 /></button></div></td></tr>)}</tbody></table>{!filtered.length && <p className="admin-empty">No hay guías que coincidan con estos filtros.</p>}</div>
         </section>
       </div>
 

@@ -25,7 +25,7 @@ Ese enlace se puede enviar por Instagram, WhatsApp, correo o una automatización
 
 - Para cambiar una guía, selecciónala, edita y presiona **Guardar cambios**.
 - Para ocultarla sin perderla, cambia su estado a **Archivada**.
-- Usa **Eliminar** solo si estás segura de que no volverás a necesitarla.
+- El botón de papelera la **archiva** de forma segura; después puedes abrirla y volver a publicarla.
 
 ## Imágenes
 
