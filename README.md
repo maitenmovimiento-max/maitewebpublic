@@ -1,6 +1,6 @@
 # Maite en Movimiento
 
-Sitio web de Maite en Movimiento, construido con Next.js 16, React 19, TypeScript, Neon Postgres y Drizzle ORM. Incluye una biblioteca pública de guías HTML, SEO dinámico y un panel privado de edición.
+Sitio web de Maite en Movimiento, construido con Next.js 16, React 19, TypeScript, Neon Postgres y Drizzle ORM. Incluye una biblioteca pública de guías Markdown, renderizado seguro, SEO dinámico y un panel privado de edición.
 
 ## Desarrollo local
 

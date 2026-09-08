@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { GuideCover } from "@/components/guide-cover";
 import { getPublishedGuide, getPublishedGuideRedirect } from "@/lib/guides";
-import { sanitizeGuideHtml } from "@/lib/sanitize";
+import { markdownToSafeHtml } from "@/lib/markdown";
 
 export const dynamic = "force-dynamic";
 
@@ -66,7 +66,7 @@ export default async function GuidePage({ params }: Props) {
           <div className="article-body-wrap">
             <aside className="article-aside"><p>Biblioteca Maiten</p><Link href="/guias"><ArrowLeft size={16} /> Todas las guías</Link></aside>
             <div>
-              <div className="prose" dangerouslySetInnerHTML={{ __html: sanitizeGuideHtml(guide.contentHtml) }} />
+              <div className="prose" dangerouslySetInnerHTML={{ __html: markdownToSafeHtml(guide.contentMarkdown) }} />
               <p className="medical-note"><strong>Nota de cuidado:</strong> este contenido es educativo y no reemplaza la evaluación ni las indicaciones de tu profesional de salud.</p>
             </div>
           </div>

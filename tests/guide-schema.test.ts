@@ -5,7 +5,7 @@ const valid = {
   title: "Movimiento seguro en el embarazo",
   slug: "movimiento-seguro-embarazo",
   excerpt: "Una descripción útil y suficientemente completa para la guía.",
-  contentHtml: "<p>Este es un contenido suficientemente extenso para poder guardar la guía.</p>",
+  contentMarkdown: "# Esta es una guía\n\nEste es un contenido suficientemente extenso para poder guardar la guía.",
   category: "Embarazo",
   status: "published" as const,
   featured: true,

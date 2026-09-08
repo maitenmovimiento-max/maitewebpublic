@@ -10,7 +10,7 @@ export const guideInputSchema = z.object({
   title: z.string().trim().min(5).max(120),
   slug: z.string().trim().min(3).max(100).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   excerpt: z.string().trim().min(20).max(280),
-  contentHtml: z.string().trim().min(40).max(100_000),
+  contentMarkdown: z.string().trim().min(40).max(100_000),
   coverImageUrl: allowedUrl.optional().default(""),
   coverImageAlt: z.string().trim().max(180).optional().default(""),
   category: z.string().trim().min(2).max(50),

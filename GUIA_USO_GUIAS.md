@@ -10,8 +10,8 @@
 
 1. Presiona **Nueva guía**.
 2. Completa el título, categoría y resumen.
-3. Escribe el contenido con títulos, listas, negritas y enlaces.
-4. Agrega la URL de una imagen de portada y descríbela en “Texto alternativo”.
+3. Escribe Markdown o carga un archivo `.md` desde **Cargar archivo .md**.
+4. La portada es opcional y solo sirve como apoyo visual de la tarjeta; el contenido principal es el texto Markdown.
 5. Déjala como **Borrador** mientras trabajas.
 6. Cuando esté lista, cambia el estado a **Publicada** y guarda.
 
@@ -29,7 +29,7 @@ Ese enlace se puede enviar por Instagram, WhatsApp, correo o una automatización
 
 ## Imágenes
 
-La base guarda el texto y la dirección de la imagen; la imagen debe estar alojada en una URL pública estable. No pegues imágenes dentro del editor. Usa archivos JPG o WebP livianos, idealmente de 1200 × 630 px para portadas compartibles.
+La base guarda el Markdown como texto. Puedes subir el mismo archivo `.md` que escribiste en tu computador. Las imágenes no son el resultado de la guía; la portada es opcional y solo se usa para presentar visualmente el enlace.
 
 ## Si algo no aparece
 

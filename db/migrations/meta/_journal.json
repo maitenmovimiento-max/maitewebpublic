@@ -22,6 +22,13 @@
       "when": 1788877105355,
       "tag": "0002_quick_sleepwalker",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1788888117940,
+      "tag": "0003_volatile_paladin",
+      "breakpoints": true
     }
   ]
 }

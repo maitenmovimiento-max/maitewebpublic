@@ -4,7 +4,6 @@ import { getDb } from "@/lib/db";
 import { isDatabaseConfigured } from "@/lib/env";
 import type { GuideInput } from "@/lib/guide-schema";
 import { sampleGuides } from "@/lib/sample-guides";
-import { sanitizeGuideHtml } from "@/lib/sanitize";
 
 const allowDemoData = process.env.NODE_ENV !== "production" || process.env.ALLOW_DEMO_DATA === "true";
 
@@ -79,7 +78,7 @@ export async function archiveGuide(id: string): Promise<boolean> {
 function normalizeInput(input: GuideInput) {
   return {
     ...input,
-    contentHtml: sanitizeGuideHtml(input.contentHtml),
+    contentMarkdown: input.contentMarkdown.trim(),
     coverImageUrl: input.coverImageUrl || null,
     coverImageAlt: input.coverImageAlt || null,
     seoTitle: input.seoTitle || null,

@@ -9,7 +9,7 @@ export const guides = pgTable(
     slug: text("slug").notNull().unique(),
     title: text("title").notNull(),
     excerpt: text("excerpt").notNull(),
-    contentHtml: text("content_html").notNull(),
+    contentMarkdown: text("content_markdown").notNull(),
     coverImageUrl: text("cover_image_url"),
     coverImageAlt: text("cover_image_alt"),
     category: text("category").notNull(),
