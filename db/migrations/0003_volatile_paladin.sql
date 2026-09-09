@@ -1,0 +1,1 @@
+ALTER TABLE "guides" RENAME COLUMN "content_html" TO "content_markdown";
