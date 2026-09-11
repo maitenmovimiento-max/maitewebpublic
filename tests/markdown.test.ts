@@ -14,4 +14,19 @@ describe("Markdown de guías", () => {
     expect(html).not.toContain("<script");
     expect(html).not.toContain("javascript:");
   });
+
+  it("organiza cada título principal en una sección editorial", () => {
+    const html = markdownToSafeHtml("Introducción\n\n## Primera sección\n\nTexto uno.\n\n## Segunda sección\n\nTexto dos.");
+
+    expect(html).toContain('<div class="guide-intro">');
+    expect(html.match(/class="guide-section"/g)).toHaveLength(2);
+    expect(html).toContain("<h2>Primera sección</h2>");
+    expect(html).toContain("<h2>Segunda sección</h2>");
+  });
+
+  it("presenta como tarjeta una guía sin títulos de segundo nivel", () => {
+    const html = markdownToSafeHtml("Una guía breve y directa.");
+
+    expect(html).toContain('class="guide-section guide-section--single"');
+  });
 });
