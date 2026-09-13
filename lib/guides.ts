@@ -8,7 +8,9 @@ import { sampleGuides } from "@/lib/sample-guides";
 const allowDemoData = process.env.NODE_ENV !== "production" || process.env.ALLOW_DEMO_DATA === "true";
 
 export async function listPublishedGuides(): Promise<Guide[]> {
-  if (!isDatabaseConfigured) return allowDemoData ? sampleGuides : [];
+  if (!isDatabaseConfigured) {
+    return allowDemoData ? sampleGuides.filter((guide) => guide.status === "published") : [];
+  }
   return getDb().select().from(guides)
     .where(eq(guides.status, "published"))
     .orderBy(desc(guides.featured), desc(guides.publishedAt));
@@ -21,7 +23,9 @@ export async function listFeaturedGuides(limit = 3): Promise<Guide[]> {
 
 export async function getPublishedGuide(slug: string): Promise<Guide | null> {
   if (!isDatabaseConfigured) {
-    return allowDemoData ? sampleGuides.find((guide) => guide.slug === slug) ?? null : null;
+    return allowDemoData
+      ? sampleGuides.find((guide) => guide.slug === slug && guide.status === "published") ?? null
+      : null;
   }
   const [guide] = await getDb().select().from(guides)
     .where(and(eq(guides.slug, slug), eq(guides.status, "published")))
