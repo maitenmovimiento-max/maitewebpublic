@@ -7,6 +7,7 @@ import { Brand } from "@/components/brand";
 
 const links = [
   { href: "/#servicios", label: "Servicios" },
+  { href: "/coaching-online", label: "Coaching online" },
   { href: "/guias", label: "Guías" },
   { href: "/#metodo", label: "Método" },
   { href: "/#sobre-maite", label: "Sobre Maite" },

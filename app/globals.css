@@ -264,6 +264,59 @@ em { color: var(--purple); font-weight: 500; }
 .prose a { color: var(--purple); font-weight: 650; text-decoration: underline; text-decoration-color: rgba(122,31,161,.35); text-underline-offset: .2em; }
 .medical-note { margin-top: 2rem; padding: 1.2rem 1.4rem; color: var(--muted); border: 1px solid rgba(122,31,161,.14); border-radius: 1rem; background: var(--lavender); font-size: .85rem; }
 
+/* Coaching online */
+.coaching-page { overflow: hidden; }
+.coaching-hero { position: relative; overflow: hidden; padding: 11rem 0 6rem; background: radial-gradient(circle at 88% 10%, rgba(223, 205, 234, .92), transparent 31%), linear-gradient(135deg, #fffdfd, #f6eef9); }
+.coaching-hero__grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .72fr); gap: clamp(2rem, 7vw, 7rem); align-items: center; }
+.coaching-hero h1 { max-width: 11ch; margin-bottom: 1.5rem; font-size: clamp(3.7rem, 7vw, 6.8rem); }
+.coaching-hero__lead { max-width: 39rem; color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.22rem); }
+.coaching-hero__trust { display: flex; flex-wrap: wrap; gap: .8rem 1.5rem; margin-top: 2rem; color: var(--purple-deep); font-size: .8rem; font-weight: 750; }
+.coaching-hero__trust span { display: inline-flex; gap: .45rem; align-items: center; }
+.coaching-hero__trust svg { color: var(--purple); }
+.coaching-hero__orb { position: absolute; border-radius: 50%; filter: blur(2px); pointer-events: none; }
+.coaching-hero__orb--one { top: 15%; right: -4rem; width: 15rem; height: 15rem; border: 1px solid rgba(122, 31, 161, .11); }
+.coaching-hero__orb--two { bottom: -8rem; left: 42%; width: 18rem; height: 18rem; background: rgba(201, 160, 78, .09); }
+.coaching-price-card { padding: clamp(1.8rem, 4vw, 2.7rem); border: 1px solid rgba(122, 31, 161, .16); border-radius: 1.75rem; background: rgba(255, 255, 255, .84); box-shadow: 0 28px 75px rgba(53, 20, 67, .14); backdrop-filter: blur(10px); }
+.coaching-price-card > p { margin-bottom: .65rem; color: var(--purple); font-size: .68rem; font-weight: 850; letter-spacing: .14em; }
+.coaching-price-card > strong { display: block; color: var(--purple-deep); font-family: var(--font-display); font-size: clamp(3.2rem, 6vw, 4.5rem); line-height: 1; }
+.coaching-price-card strong small { font-family: var(--font-sans); font-size: .9rem; font-weight: 800; }
+.coaching-price-card > span { display: block; margin-top: .55rem; color: var(--muted); font-size: .85rem; }
+.coaching-price-card hr { margin: 1.6rem 0; border: 0; border-top: 1px solid var(--line); }
+.coaching-price-card > div { display: flex; gap: .65rem; align-items: flex-start; margin: .9rem 0; color: var(--purple-deep); font-size: .88rem; font-weight: 700; }
+.coaching-price-card > div svg { flex: 0 0 auto; color: var(--purple); }
+.coaching-price-card > a { display: inline-flex; gap: .45rem; align-items: center; margin-top: 1.35rem; color: var(--purple); font-size: .78rem; font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
+.coaching-intro__grid, .coaching-faq-section__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .82fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; }
+.coaching-intro h2, .coaching-faq-section h2 { margin-bottom: 0; }
+.coaching-intro__copy { color: var(--muted); font-size: 1.06rem; }
+.coaching-intro__copy > :last-child { margin-bottom: 0; }
+.coaching-includes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.coaching-includes > div { display: flex; gap: .9rem; align-items: flex-start; min-height: 100%; padding: 1.35rem; border: 1px solid rgba(122, 31, 161, .12); border-radius: 1rem; background: rgba(255, 255, 255, .78); }
+.coaching-includes svg { flex: 0 0 auto; color: var(--purple); }
+.coaching-includes p { margin: 0; color: var(--purple-deep); font-size: .93rem; font-weight: 650; line-height: 1.5; }
+.coaching-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; padding: 0; margin: 0; list-style: none; }
+.coaching-steps li { min-height: 100%; padding: 1.5rem 1.2rem; border-top: 2px solid var(--gold); background: #fbf9fc; }
+.coaching-steps span { color: var(--purple); font-size: .72rem; font-weight: 850; letter-spacing: .1em; }
+.coaching-steps h3 { margin: 1rem 0 .6rem; font-size: 1.7rem; }
+.coaching-steps p { margin: 0; color: var(--muted); font-size: .83rem; line-height: 1.6; }
+.coaching-note { display: flex; gap: .65rem; align-items: flex-start; max-width: 49rem; margin: 3rem auto 0; padding: 1rem 1.2rem; color: var(--purple-deep); border: 1px solid rgba(201, 160, 78, .32); border-radius: 1rem; background: #fffaf0; font-size: .88rem; }
+.coaching-note svg { flex: 0 0 auto; color: var(--gold-dark); }
+.coaching-faq-section { background: linear-gradient(120deg, #fbf8fc, var(--lavender)); }
+.coaching-faqs { display: grid; gap: .8rem; }
+.coaching-faqs details { padding: 1.05rem 1.2rem; border: 1px solid rgba(122, 31, 161, .13); border-radius: .9rem; background: rgba(255, 255, 255, .78); }
+.coaching-faqs summary { color: var(--purple-deep); cursor: pointer; font-weight: 800; }
+.coaching-faqs p { margin: .75rem 0 0; color: var(--muted); font-size: .92rem; }
+.coaching-boundaries { padding-top: 0; }
+.coaching-boundaries__box { display: flex; gap: 1.2rem; align-items: flex-start; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid rgba(122, 31, 161, .14); border-radius: 1.35rem; background: #fcfafc; }
+.coaching-boundaries__box > svg { flex: 0 0 auto; color: var(--purple); }
+.coaching-boundaries h2 { margin-bottom: .7rem; font-size: clamp(1.9rem, 4vw, 2.7rem); }
+.coaching-boundaries p { max-width: 55rem; margin: 0; color: var(--muted); }
+.coaching-cta { padding: clamp(4.5rem, 9vw, 7rem) 0; color: white; background: var(--purple-deep); }
+.coaching-cta h2 { max-width: 16ch; margin-bottom: 1rem; color: white; }
+.coaching-cta h2 em { color: #f4d998; }
+.coaching-cta p:not(.eyebrow) { max-width: 42rem; margin-bottom: 0; color: rgba(255, 255, 255, .74); }
+.coaching-cta__inner { display: flex; gap: 2rem; align-items: center; justify-content: space-between; }
+.coaching-cta .button { flex: 0 0 auto; }
+
 .not-found { min-height: 75svh; display: grid; place-items: center; padding: 8rem 1.5rem; text-align: center; }
 .not-found h1 { margin-bottom: 1rem; }
 .not-found p { color: var(--muted); }
@@ -279,6 +332,9 @@ em { color: var(--purple); font-weight: 500; }
   .hero__visual { min-height: 580px; }
   .hero__note { right: 0; }
   .section-heading--split, .method__grid, .about__grid, .faq-section__grid, .contact__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .coaching-hero__grid, .coaching-intro__grid, .coaching-faq-section__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .coaching-hero h1 { max-width: 13ch; }
+  .coaching-steps { grid-template-columns: repeat(3, 1fr); }
   .method__intro { position: static; }
   .guides-grid { grid-template-columns: 1fr 1fr; }
   .guides-grid .guide-card:last-child { grid-column: 1 / -1; }
@@ -303,6 +359,11 @@ em { color: var(--purple); font-weight: 500; }
   .trust-band__grid { grid-template-columns: 1fr; }
   .trust-band__grid > div, .trust-band__grid > div:first-child { padding: 1.3rem 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
   .services-grid, .guides-grid, .field-row { grid-template-columns: 1fr; }
+  .coaching-hero { padding-top: 8.5rem; }
+  .coaching-includes, .coaching-steps { grid-template-columns: 1fr; }
+  .coaching-price-card { padding: 1.6rem; }
+  .coaching-cta__inner { align-items: flex-start; flex-direction: column; }
+  .coaching-cta .button { width: 100%; }
   .guides-grid .guide-card:last-child { grid-column: auto; }
   .service-card { min-height: auto; padding: 2rem 1.4rem; }
   .service-card__tag { margin-bottom: 4rem; }
