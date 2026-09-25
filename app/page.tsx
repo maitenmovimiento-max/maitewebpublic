@@ -75,15 +75,16 @@ export default async function HomePage() {
               </article>
               <article className="service-card">
                 <span className="service-card__number">02</span>
-                <p className="service-card__tag">Claridad para avanzar</p>
-                <h3>Asesoría integral 1 a 1</h3>
-                <p>Una conversación profunda para ordenar tus dudas y crear una ruta concreta de movimiento, bienestar y autocuidado.</p>
+                <p className="service-card__tag">Programa prenatal · por trimestres</p>
+                <h3>Maternidad en Movimiento</h3>
+                <p>Un curso online de entrenamiento prenatal para acompañarte durante el embarazo con rutinas cortas desde casa, adaptadas a cada trimestre.</p>
                 <ul>
-                  <li><Check size={17} /> Sesión estratégica individual</li>
-                  <li><Check size={17} /> Recomendaciones prácticas</li>
-                  <li><Check size={17} /> Plan de próximos pasos</li>
+                  <li><Check size={17} /> 4 módulos, con bienvenida y evaluación inicial</li>
+                  <li><Check size={17} /> Rutinas para el primer, segundo y tercer trimestre</li>
+                  <li><Check size={17} /> Sesiones de 15 a 25 minutos, sin gimnasio</li>
+                  <li><Check size={17} /> Acceso online para entrenar a tu ritmo</li>
                 </ul>
-                <Link className="text-link" href="#contacto">Agendar asesoría <ArrowRight size={17} /></Link>
+                <a className="text-link" href="https://curso.maitenmovimiento.cl" target="_blank" rel="noreferrer">Ver el curso <ArrowRight size={17} /></a>
               </article>
               <article className="service-card service-card--coaching">
                 <span className="service-card__number">03</span>
