@@ -85,6 +85,20 @@ export default async function HomePage() {
                 </ul>
                 <Link className="text-link" href="#contacto">Agendar asesoría <ArrowRight size={17} /></Link>
               </article>
+              <article className="service-card service-card--coaching">
+                <span className="service-card__number">03</span>
+                <p className="service-card__tag">4 semanas · $50.000 CLP</p>
+                <h3>Coaching personalizado online</h3>
+                <p>Un acompañamiento online para mujeres adultas que quieren entrenar con un plan claro, flexible y diseñado según sus objetivos, experiencia, días disponibles y equipamiento.</p>
+                <ul>
+                  <li><Check size={17} /> Rutina personalizada para casa, gimnasio o ambos</li>
+                  <li><Check size={17} /> De 1 a 4 días de entrenamiento por semana</li>
+                  <li><Check size={17} /> Ajustes semanales según tu esfuerzo y tus notas</li>
+                  <li><Check size={17} /> Guía de hábitos y revisión personal de Maite</li>
+                </ul>
+                <p className="service-card__note">Este coaching no es para embarazo ni postparto: para esas etapas, el acompañamiento es específico.</p>
+                <a className="text-link" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20consultar%20por%20el%20Coaching%20online." target="_blank" rel="noreferrer">Consultar disponibilidad <ArrowRight size={17} /></a>
+              </article>
             </div>
           </div>
         </section>

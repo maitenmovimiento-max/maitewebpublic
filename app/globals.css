@@ -116,6 +116,9 @@ em { color: var(--purple); font-weight: 500; }
 .service-card ul { display: grid; gap: .7rem; margin: 2rem 0 2.7rem; padding: 0; list-style: none; }
 .service-card li { display: flex; gap: .65rem; align-items: center; font-size: .9rem; }
 .service-card li svg { color: var(--sage); }
+.service-card--coaching { grid-column: 1 / -1; min-height: 0; }
+.service-card--coaching ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
+.service-card__note { max-width: 52rem; margin: -1.2rem 0 2rem; color: var(--muted); font-size: .82rem; }
 
 .guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
 .guide-card { overflow: hidden; border: 1px solid rgba(53,20,67,.08); border-radius: var(--radius); background: white; transition: transform .3s ease, box-shadow .3s ease; }
@@ -359,6 +362,7 @@ em { color: var(--purple); font-weight: 500; }
   .trust-band__grid { grid-template-columns: 1fr; }
   .trust-band__grid > div, .trust-band__grid > div:first-child { padding: 1.3rem 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
   .services-grid, .guides-grid, .field-row { grid-template-columns: 1fr; }
+  .service-card--coaching ul { grid-template-columns: 1fr; }
   .coaching-hero { padding-top: 8.5rem; }
   .coaching-includes, .coaching-steps { grid-template-columns: 1fr; }
   .coaching-price-card { padding: 1.6rem; }

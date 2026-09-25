@@ -27,7 +27,6 @@ export function SiteFooter({
         <div>
           <p className="footer-title">Explora</p>
           <Link href="/#servicios">Servicios</Link>
-          <Link href="/coaching-online">Coaching online</Link>
           <Link href="/guias">Biblioteca de guías</Link>
           <Link href="/#sobre-maite">Sobre Maite</Link>
         </div>
