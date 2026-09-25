@@ -35,7 +35,7 @@ export default async function HomePage() {
             </div>
             <div className="hero__visual">
               <div className="hero__image">
-                <Image src="/images/maite.png" alt="Maite acompañando una sesión de movimiento" fill priority sizes="(max-width: 800px) 92vw, 44vw" />
+                <Image src="/images/maite-embarazo-perfil.jpeg" alt="Maite embarazada junto a una pesa kettlebell" fill priority sizes="(max-width: 800px) 92vw, 44vw" />
               </div>
               <div className="hero__note">
                 <Sparkles size={20} />
@@ -116,7 +116,7 @@ export default async function HomePage() {
 
         <section className="section about" id="sobre-maite">
           <div className="shell about__grid">
-            <div className="about__image"><Image src="/images/maite.png" alt="Maite, fundadora de MaitenMovimiento" fill sizes="(max-width: 800px) 92vw, 40vw" /></div>
+            <div className="about__image"><Image src="/images/maite-embarazo-sentada.jpeg" alt="Maite embarazada sentada sobre una colchoneta junto a una pesa kettlebell" fill sizes="(max-width: 800px) 92vw, 40vw" /></div>
             <div className="about__copy">
               <p className="eyebrow">Sobre Maite</p>
               <h2>Ciencia, empatía y una profunda confianza en <em>tu cuerpo.</em></h2>
