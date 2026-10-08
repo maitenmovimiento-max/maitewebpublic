@@ -90,15 +90,15 @@ export default async function HomePage() {
                 <span className="service-card__number">03</span>
                 <p className="service-card__tag">4 semanas · $50.000 CLP</p>
                 <h3>Coaching personalizado online</h3>
-                <p>Un acompañamiento online para mujeres adultas que quieren entrenar con un plan claro, flexible y diseñado según sus objetivos, experiencia, días disponibles y equipamiento.</p>
+                <p>Más que una rutina: un acompañamiento online que integra entrenamiento, alimentación como hábito y hábitos saludables para construir cambios que puedas sostener en el tiempo.</p>
                 <ul>
                   <li><Check size={17} /> Rutina personalizada para casa, gimnasio o ambos</li>
                   <li><Check size={17} /> De 1 a 4 días de entrenamiento por semana</li>
-                  <li><Check size={17} /> Ajustes semanales según tu esfuerzo y tus notas</li>
-                  <li><Check size={17} /> Guía de hábitos y revisión personal de Maite</li>
+                  <li><Check size={17} /> Acompañamiento de alimentación y hábitos saludables</li>
+                  <li><Check size={17} /> Ajustes semanales para avanzar de forma sostenible</li>
                 </ul>
-                <p className="service-card__note">Este coaching no es para embarazo ni postparto: para esas etapas, el acompañamiento es específico.</p>
-                <a className="button service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20consultar%20por%20el%20Coaching%20online." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
+                <p className="service-card__note">Este coaching es para mujeres adultas fuera de embarazo y postparto; incluye orientación general de hábitos, no dietas clínicas.</p>
+                <a className="button service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20conocer%20el%20Coaching%20online%20de%20entrenamiento%20y%20h%C3%A1bitos%20saludables." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
               </article>
             </div>
           </div>
