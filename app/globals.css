@@ -116,7 +116,7 @@ em { color: var(--purple); font-weight: 500; }
 .service-card ul { display: grid; gap: .7rem; margin: 2rem 0 2.7rem; padding: 0; list-style: none; }
 .service-card li { display: flex; gap: .65rem; align-items: center; font-size: .9rem; }
 .service-card li svg { color: var(--sage); }
-.service-card > .text-link { margin-top: auto; }
+.service-card > .text-link, .service-card > .service-card__button { align-self: flex-start; margin-top: auto; }
 .service-card--coaching { min-height: 590px; }
 .service-card__note { margin: -1.2rem 0 2rem; color: var(--muted); font-size: .82rem; }
 

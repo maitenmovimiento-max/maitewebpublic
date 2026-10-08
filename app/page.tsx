@@ -50,28 +50,28 @@ export default async function HomePage() {
           <div className="shell trust-band__grid">
             <div><strong>Embarazo</strong><span>Movimiento seguro por trimestre</span></div>
             <div><strong>Postparto</strong><span>Recuperación progresiva y realista</span></div>
-            <div><strong>Online o presencial</strong><span>Acompañamiento estés donde estés</span></div>
+            <div><strong>100% online</strong><span>Acompañamiento estés donde estés</span></div>
           </div>
         </section>
 
         <section className="section" id="servicios">
           <div className="shell">
             <div className="section-heading section-heading--split">
-              <div><p className="eyebrow">Servicios</p><h2>Un espacio para volver<br />a sentirte <em>tú.</em></h2></div>
-              <p>Cada acompañamiento parte desde tu historia, tu momento y tus objetivos. Sin fórmulas rígidas ni comparaciones.</p>
+              <div><p className="eyebrow">Servicios</p><h2>Encuentra el apoyo que<br /><em>necesitas hoy.</em></h2></div>
+              <p>Cuéntame en qué etapa estás y qué te gustaría trabajar. Por WhatsApp te orientaré hacia la opción que mejor encaje contigo.</p>
             </div>
             <div className="services-grid">
               <article className="service-card service-card--featured">
                 <span className="service-card__number">01</span>
-                <p className="service-card__tag">Acompañamiento continuo</p>
+                <p className="service-card__tag">100% online · embarazo y postparto</p>
                 <h3>Entrenamiento personalizado</h3>
-                <p>Sesiones individuales diseñadas para tu trimestre o etapa de recuperación, con ajustes en tiempo real y seguimiento.</p>
+                <p>Un acompañamiento online diseñado según tus objetivos y tu etapa. También puedes hacerlo en postparto, con una planificación adaptada a tu proceso y seguimiento cercano.</p>
                 <ul>
-                  <li><Check size={17} /> Evaluación inicial</li>
-                  <li><Check size={17} /> Plan adaptado semana a semana</li>
-                  <li><Check size={17} /> Modalidad online o presencial</li>
+                  <li><Check size={17} /> Evaluación inicial online</li>
+                  <li><Check size={17} /> Plan personalizado y seguimiento semanal</li>
+                  <li><Check size={17} /> Acompañamiento para embarazo o postparto</li>
                 </ul>
-                <Link className="text-link text-link--light" href="#contacto">Quiero comenzar <ArrowRight size={17} /></Link>
+                <a className="button button--gold service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entrenamiento%20personalizado%20online." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
               </article>
               <article className="service-card">
                 <span className="service-card__number">02</span>
@@ -98,7 +98,7 @@ export default async function HomePage() {
                   <li><Check size={17} /> Guía de hábitos y revisión personal de Maite</li>
                 </ul>
                 <p className="service-card__note">Este coaching no es para embarazo ni postparto: para esas etapas, el acompañamiento es específico.</p>
-                <a className="text-link" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20consultar%20por%20el%20Coaching%20online." target="_blank" rel="noreferrer">Consultar disponibilidad <ArrowRight size={17} /></a>
+                <a className="button service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20consultar%20por%20el%20Coaching%20online." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
               </article>
             </div>
           </div>
