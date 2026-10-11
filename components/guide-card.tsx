@@ -2,13 +2,16 @@ import Link from "next/link";
 import { ArrowUpRight, Clock3 } from "lucide-react";
 import type { Guide } from "@/db/schema";
 import { GuideCover } from "@/components/guide-cover";
+import { getGuideCover } from "@/lib/guide-covers";
 
 export function GuideCard({ guide, priority = false }: { guide: Guide; priority?: boolean }) {
+  const cover = getGuideCover(guide);
+
   return (
     <article className="guide-card">
       <Link className="guide-card__media" href={`/guias/${guide.slug}`} aria-label={`Leer ${guide.title}`}>
-        {guide.coverImageUrl ? (
-          <GuideCover src={guide.coverImageUrl} alt={guide.coverImageAlt || ""} priority={priority} />
+        {cover.coverImageUrl ? (
+          <GuideCover src={cover.coverImageUrl} alt={cover.coverImageAlt || ""} priority={priority} />
         ) : (
           <span className="guide-card__monogram" aria-hidden="true">M</span>
         )}

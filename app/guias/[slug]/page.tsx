@@ -5,6 +5,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { GuideCover } from "@/components/guide-cover";
+import { getGuideCover } from "@/lib/guide-covers";
 import { getPublishedGuide, getPublishedGuideRedirect } from "@/lib/guides";
 import { markdownToSafeHtml } from "@/lib/markdown";
 
@@ -41,6 +42,7 @@ export default async function GuidePage({ params }: Props) {
   const formattedDate = guide.publishedAt
     ? new Intl.DateTimeFormat("es-CL", { day: "numeric", month: "long", year: "numeric" }).format(guide.publishedAt)
     : null;
+  const cover = getGuideCover(guide);
 
   return (
     <>
@@ -58,7 +60,7 @@ export default async function GuidePage({ params }: Props) {
                   <div className="article-meta"><span><Clock3 size={16} /> {guide.readTime} min</span>{formattedDate && <span><CalendarDays size={16} /> {formattedDate}</span>}</div>
                 </div>
                 <div className="article-cover">
-                  {guide.coverImageUrl ? <GuideCover src={guide.coverImageUrl} alt={guide.coverImageAlt || ""} priority /> : <span className="article-cover__letter" aria-hidden="true">M</span>}
+                  {cover.coverImageUrl ? <GuideCover src={cover.coverImageUrl} alt={cover.coverImageAlt || ""} priority /> : <span className="article-cover__letter" aria-hidden="true">M</span>}
                 </div>
               </div>
             </div>
