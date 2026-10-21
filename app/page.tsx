@@ -64,14 +64,16 @@ export default async function HomePage() {
               <article className="service-card service-card--featured">
                 <span className="service-card__number">01</span>
                 <p className="service-card__tag">100% online · embarazo y postparto</p>
-                <h3>Entrenamiento personalizado</h3>
-                <p>Un acompañamiento online diseñado según tus objetivos y tu etapa. También puedes hacerlo en postparto, con una planificación adaptada a tu proceso y seguimiento cercano.</p>
+                <h3>Plan personalizado</h3>
+                <p>Un acompañamiento integral online que une entrenamiento personalizado, seguimiento día a día y una guía alimentaria práctica para avanzar con claridad y sostener tus hábitos. Se adapta a tus objetivos y a tu etapa, también durante el postparto.</p>
                 <ul>
                   <li><Check size={17} /> Evaluación inicial online</li>
-                  <li><Check size={17} /> Plan personalizado y seguimiento semanal</li>
+                  <li><Check size={17} /> Entrenamiento personalizado para casa, gimnasio o ambos</li>
+                  <li><Check size={17} /> Seguimiento día a día y ajustes según tu proceso</li>
+                  <li><Check size={17} /> Guía alimentaria práctica y orientación general de hábitos</li>
                   <li><Check size={17} /> Acompañamiento para embarazo o postparto</li>
                 </ul>
-                <a className="button button--gold service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20entrenamiento%20personalizado%20online." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
+                <a className="button button--gold service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20personalizado%20integral%20online." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
               </article>
               <article className="service-card">
                 <span className="service-card__number">02</span>
