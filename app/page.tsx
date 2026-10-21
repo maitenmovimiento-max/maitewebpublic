@@ -71,7 +71,7 @@ export default async function HomePage() {
                   <li><Check size={17} /> Entrenamiento personalizado para casa, gimnasio o ambos</li>
                   <li><Check size={17} /> Seguimiento día a día y ajustes según tu proceso</li>
                   <li><Check size={17} /> Guía alimentaria práctica y orientación general de hábitos</li>
-                  <li><Check size={17} /> Acompañamiento para embarazo o postparto</li>
+                  <li><Check size={17} /> Acompañamiento para embarazo, postparto o maternidad</li>
                 </ul>
                 <a className="button button--gold service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20personalizado%20integral%20online." target="_blank" rel="noreferrer">Hablar por WhatsApp <MessageCircle size={17} /></a>
               </article>
