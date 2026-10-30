@@ -102,7 +102,7 @@ em { color: var(--purple); font-weight: 500; }
 .trust-band strong { margin-bottom: .25rem; color: var(--gold); font-family: var(--font-display); font-size: 1.35rem; }
 .trust-band span { color: rgba(255,255,255,.68); font-size: .78rem; }
 
-.services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; max-width: 980px; margin-inline: auto; }
+.services-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; max-width: 1200px; margin-inline: auto; }
 .service-card { position: relative; display: flex; flex-direction: column; min-height: 590px; padding: clamp(1.75rem, 3.2vw, 2.75rem); border: 1px solid var(--line); border-radius: var(--radius); background: white; }
 .service-card--featured { color: rgba(255,255,255,.74); border-color: var(--purple-deep); background: var(--purple-deep); }
 .service-card--featured h3 { color: white; }
@@ -113,6 +113,8 @@ em { color: var(--purple); font-weight: 500; }
 .service-card h3 { max-width: 420px; margin-bottom: 1.2rem; font-size: clamp(2rem, 2.8vw, 2.8rem); }
 .service-card > p:not(.service-card__tag) { max-width: 540px; color: var(--muted); }
 .service-card--featured > p:not(.service-card__tag) { color: rgba(255,255,255,.7); }
+.service-card__price { margin: .75rem 0 -.55rem; color: var(--purple) !important; font-family: var(--font-display); font-size: 1.5rem; }
+.service-card__price span { color: var(--muted); font-family: var(--font-body); font-size: .9rem; }
 .service-card ul { display: grid; gap: .7rem; margin: 2rem 0 2.7rem; padding: 0; list-style: none; }
 .service-card li { display: flex; gap: .65rem; align-items: center; font-size: .9rem; }
 .service-card li svg { color: var(--sage); }
@@ -336,7 +338,8 @@ em { color: var(--purple); font-weight: 500; }
   .coaching-hero__grid, .coaching-intro__grid, .coaching-faq-section__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .coaching-hero h1 { max-width: 13ch; }
   .coaching-steps { grid-template-columns: repeat(3, 1fr); }
-  .services-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; max-width: 980px; }
+  .services-grid .service-card:last-child { grid-column: 1 / -1; justify-self: center; width: calc((100% - 1.5rem) / 2); }
   .method__intro { position: static; }
   .guides-grid { grid-template-columns: 1fr 1fr; }
   .guides-grid .guide-card:last-child { grid-column: 1 / -1; }
@@ -361,6 +364,7 @@ em { color: var(--purple); font-weight: 500; }
   .trust-band__grid { grid-template-columns: 1fr; }
   .trust-band__grid > div, .trust-band__grid > div:first-child { padding: 1.3rem 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
   .services-grid, .guides-grid, .field-row { grid-template-columns: 1fr; }
+  .services-grid .service-card:last-child { grid-column: auto; justify-self: stretch; width: auto; }
   .coaching-hero { padding-top: 8.5rem; }
   .coaching-includes, .coaching-steps { grid-template-columns: 1fr; }
   .coaching-price-card { padding: 1.6rem; }

@@ -88,6 +88,19 @@ export default async function HomePage() {
                 </ul>
                 <a className="text-link" href="https://curso.maitenmovimiento.cl" target="_blank" rel="noreferrer">Ver el curso <ArrowRight size={17} /></a>
               </article>
+              <article className="service-card">
+                <span className="service-card__number">03</span>
+                <p className="service-card__tag">Ebook digital · estimulación para bebés</p>
+                <h3>Ebook de estimulación para bebés</h3>
+                <p>Una guía digital con propuestas simples para acompañar los momentos de juego y exploración de tu bebé.</p>
+                <p className="service-card__price">$6.000 CLP <span>· ≈ US$6</span></p>
+                <ul>
+                  <li><Check size={17} /> Ebook digital de estimulación para bebés</li>
+                  <li><Check size={17} /> Ideas para acompañar el juego y la exploración</li>
+                  <li><Check size={17} /> Un recurso práctico para consultar a tu ritmo</li>
+                </ul>
+                <a className="button service-card__button" href="https://wa.me/56987572067?text=Hola%20Maite%2C%20quiero%20comprar%20el%20ebook%20de%20estimulaci%C3%B3n%20para%20beb%C3%A9s." target="_blank" rel="noreferrer">Quiero comprar el ebook <MessageCircle size={17} /></a>
+              </article>
             </div>
           </div>
         </section>
